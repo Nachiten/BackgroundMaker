@@ -56,19 +56,23 @@ def leerPaleta():
         coloresReemplazados.append(numpy_arrayPaleta[0][unNum])
 
 
-numeroPaleta = 2
+numeroPaleta = 0
 
-image = Image.open("C:\\Users\ignac\Desktop\Imagenes\ImagenModelo.png")
-image = image.convert('RGBA')
-numpy_array = numpy.array(image)
+for unNumFor in range(4, 6):
 
-width, height = image.size
+    numeroPaleta = unNumFor
 
-coloresAReemplazar = [(0, 0, 0, 255), (255, 255, 255, 255), (50, 50, 50, 255), (180, 180, 180, 255)]
-coloresReemplazados = []
+    image = Image.open("C:\\Users\ignac\Desktop\Imagenes\ImagenModelo.png")
+    image = image.convert('RGBA')
+    numpy_array = numpy.array(image)
 
-leerPaleta()
-reemplazarColores()
+    width, height = image.size
 
-im2 = Image.fromarray(numpy_array)
-im2.save("C:\\Users\ignac\Desktop\Imagenes\ImagenEditada" + str(numeroPaleta) + ".png")
+    coloresAReemplazar = [(0, 0, 0, 255), (255, 255, 255, 255), (50, 50, 50, 255), (180, 180, 180, 255)]
+    coloresReemplazados = []
+
+    leerPaleta()
+    reemplazarColores()
+
+    im2 = Image.fromarray(numpy_array)
+    im2.save("C:\\Users\ignac\Desktop\Imagenes\ImagenEditada" + str(numeroPaleta) + ".png")
